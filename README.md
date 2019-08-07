@@ -1,4 +1,8 @@
-# marcio
+# Vue CLI 3 | BlockStack | Vuetify | Vuex | PWA
+
+I created this to kickoff a personal project, and had to jump through a lot of hoops to understand this and get started. Blockstack auth is entirely managed with vuex, and vue-router auth guards using Blockstack's own methods.
+
+Enjoy :)
 
 ## Project setup
 ```

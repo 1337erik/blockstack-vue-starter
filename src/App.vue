@@ -2,15 +2,15 @@
 
   <v-app>
 
-    <main-appbar v-if=" isAuth "/>
-    <main-nav-drawer v-if=" isAuth "/>
+    <main-appbar v-if=" !isAuth "/>
+    <main-nav-drawer v-if=" !isAuth "/>
 
     <v-content>
 
-      <v-container>
+      <!-- <v-container v-if=" isAuth "> -->
 
         <router-view></router-view>
-      </v-container>
+      <!-- </v-container> -->
     </v-content>
   </v-app>
 </template>
