@@ -3,12 +3,12 @@
   "short_name": "marcio",
   "icons": [
     {
-      "src": "https://https://1337erik.github.io/blockstack-vue-starter/img/icons/android-chrome-192x192.png",
+      "src": "https://1337erik.github.io/blockstack-vue-starter/img/icons/android-chrome-192x192.png",
       "sizes": "192x192",
       "type": "image/png"
     },
     {
-      "src": "https://https://1337erik.github.io/blockstack-vue-starter/img/icons/android-chrome-512x512.png",
+      "src": "https://1337erik.github.io/blockstack-vue-starter/img/icons/android-chrome-512x512.png",
       "sizes": "512x512",
       "type": "image/png"
     }
