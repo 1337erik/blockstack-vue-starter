@@ -1,15 +1,15 @@
 self.__precacheManifest = [
   {
-    "revision": "4357beb823a5f8d65c260f045d9e019a",
-    "url": "/blockstack-vue-starter/fonts/Roboto-RegularItalic.4357beb8.woff2"
+    "revision": "94008e69aaf05da75c0bbf8f8bb0db41",
+    "url": "/blockstack-vue-starter/fonts/Roboto-BoldItalic.94008e69.woff2"
   },
   {
     "revision": "b6216d61c03e6ce0c9aea6ca7808f7ca",
     "url": "/blockstack-vue-starter/robots.txt"
   },
   {
-    "revision": "94008e69aaf05da75c0bbf8f8bb0db41",
-    "url": "/blockstack-vue-starter/fonts/Roboto-BoldItalic.94008e69.woff2"
+    "revision": "13ec0eb5bdb821ff4930237d7c9f943f",
+    "url": "/blockstack-vue-starter/fonts/Roboto-MediumItalic.13ec0eb5.woff2"
   },
   {
     "revision": "68c1f598d53857576c57",
@@ -64,12 +64,12 @@ self.__precacheManifest = [
     "url": "/blockstack-vue-starter/fonts/Roboto-Light.d26871e8.woff2"
   },
   {
-    "revision": "5b4a33e176ff736a74f0ca2dd9e6b396",
-    "url": "/blockstack-vue-starter/fonts/Roboto-ThinItalic.5b4a33e1.woff2"
+    "revision": "4357beb823a5f8d65c260f045d9e019a",
+    "url": "/blockstack-vue-starter/fonts/Roboto-RegularItalic.4357beb8.woff2"
   },
   {
-    "revision": "13ec0eb5bdb821ff4930237d7c9f943f",
-    "url": "/blockstack-vue-starter/fonts/Roboto-MediumItalic.13ec0eb5.woff2"
+    "revision": "e8eaae902c3a4dacb9a5062667e10576",
+    "url": "/blockstack-vue-starter/fonts/Roboto-LightItalic.e8eaae90.woff2"
   },
   {
     "revision": "ad538a69b0e8615ed0419c4529344ffc",
@@ -84,24 +84,24 @@ self.__precacheManifest = [
     "url": "/blockstack-vue-starter/fonts/Roboto-RegularItalic.f5902d5e.woff"
   },
   {
-    "revision": "73f0a88bbca1bec19fb1303c689d04c6",
-    "url": "/blockstack-vue-starter/fonts/Roboto-Regular.73f0a88b.woff2"
+    "revision": "90d1676003d9c28c04994c18bfd8b558",
+    "url": "/blockstack-vue-starter/fonts/Roboto-Medium.90d16760.woff2"
   },
   {
     "revision": "13efe6cbc10b97144a28310ebdeda594",
     "url": "/blockstack-vue-starter/fonts/Roboto-LightItalic.13efe6cb.woff"
   },
   {
-    "revision": "90d1676003d9c28c04994c18bfd8b558",
-    "url": "/blockstack-vue-starter/fonts/Roboto-Medium.90d16760.woff2"
+    "revision": "73f0a88bbca1bec19fb1303c689d04c6",
+    "url": "/blockstack-vue-starter/fonts/Roboto-Regular.73f0a88b.woff2"
   },
   {
     "revision": "1d6594826615607f6dc860bb49258acb",
     "url": "/blockstack-vue-starter/fonts/Roboto-Medium.1d659482.woff"
   },
   {
-    "revision": "e8eaae902c3a4dacb9a5062667e10576",
-    "url": "/blockstack-vue-starter/fonts/Roboto-LightItalic.e8eaae90.woff2"
+    "revision": "5b4a33e176ff736a74f0ca2dd9e6b396",
+    "url": "/blockstack-vue-starter/fonts/Roboto-ThinItalic.5b4a33e1.woff2"
   },
   {
     "revision": "8a96edbbcd9a6991d79371aed0b0288e",

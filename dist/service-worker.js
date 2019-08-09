@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/blockstack-vue-starter/precache-manifest.9a684054d6a30231b5637083d1efd218.js"
+  "/blockstack-vue-starter/precache-manifest.3943866832808b4aa7c8b49cc034fa67.js"
 );
 
 workbox.core.setCacheNameDetails({prefix: "marcio"});
