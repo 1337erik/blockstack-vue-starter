@@ -18,7 +18,7 @@
               <v-card-text class="text-center"><a href="https://blockstack.org" target="_blank">Blockstack</a></v-card-text>
               <v-card-actions>
 
-                <v-btn class="primary mx-auto" @click.prevent="signIn">Sign In With Blockstack</v-btn>
+                <v-btn class="primary mx-auto" @click.prevent=" signIn ">Sign In With Blockstack</v-btn>
               </v-card-actions>
             </v-card>
           </v-layout>

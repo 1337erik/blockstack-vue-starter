@@ -16,7 +16,9 @@ const router = new Router({
 
 router.beforeEach( ( to, from, next ) => {
 
-  if( ! store.getters[ 'auth/isAuth' ] ) next({ name: 'signin' });
+  if( to.name == 'signin' ) next();
+
+  if( !store.getters[ 'auth/isAuth' ] ) next({ name: 'signin' });
   // basic blockstack auth guard
 
   next();

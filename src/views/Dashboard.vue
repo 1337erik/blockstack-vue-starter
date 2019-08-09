@@ -10,10 +10,10 @@
 
           <h1 class="page-header align-middle">
             Blockstack Todo App
-            <img :src="user.avatarUrl() ? user.avatarUrl() : '/avatar-placeholder.png'" class="avatar">
-            <small><span class="sign-out">(<a href="#" @click.prevent="signOut">Sign Out</a>)</span></small>
+            <!-- <img :src="user.avatarUrl() ? user.avatarUrl() : '/avatar-placeholder.png'" class="avatar"> -->
+            <small><span class="sign-out">(<a href="#" @click.prevent=" signOut ">Sign Out</a>)</span></small>
           </h1>
-          <h2 class="user-info">
+          <!-- <h2 class="user-info">
 
             <small>
 
@@ -35,9 +35,9 @@
                 <button class="btn btn-default bg-light" type="submit" :disabled="! todo">Add</button>
               </span>
             </div>
-          </form>
+          </form> -->
 
-          <ul class="list-group">
+          <!-- <ul class="list-group">
 
             <li v-for="todo in todos"
               class="list-group-item"
@@ -52,7 +52,7 @@
                 class="delete float-right"
                 href="#">X</a>
             </li>
-          </ul>
+          </ul> -->
         </div>
       </div>
     </div>
@@ -61,15 +61,11 @@
 
 <script>
 
-  import { userSession } from '../userSession';
+  import { mapGetters, mapActions } from 'vuex';
   var STORAGE_FILE = 'todos.json';
 
   export default {
 
-    props: [
-
-      'user'
-    ],
     data () {
 
       return {
@@ -79,57 +75,65 @@
         uidCount : 0
       }
     },
+    computed: {
+
+      ...mapGetters({
+
+        user        : 'auth/user',
+        userSession : 'auth/userSession'
+      })
+    },
     watch: {
 
-      todos: {
+      // todos: {
 
-        handler: function ( todos ) {
+      //   handler: function ( todos ) {
 
-          // encryption is now enabled by default
-          return userSession.putFile( STORAGE_FILE, JSON.stringify( todos ) )
-        },
-        deep: true
-      }
+      //     // encryption is now enabled by default
+      //     return this.userSession.putFile( STORAGE_FILE, JSON.stringify( todos ) )
+      //   },
+      //   deep: true
+      // }
     },
     mounted () {
 
-      this.fetchData()
+      // this.fetchData()
     },
     methods: {
 
-      addTodo () {
+      ...mapActions({
 
-        if ( !this.todo.trim() ) {
+        signOut: 'auth/signOut'
+      })
 
-          return
-        }
-        this.todos.unshift({
+      // addTodo () {
 
-          id        : this.uidCount++,
-          text      : this.todo.trim(),
-          completed : false
-        });
-        this.todo = '';
-      },
-      fetchData () {
+      //   if ( !this.todo.trim() ) {
 
-        userSession.getFile( STORAGE_FILE ) // decryption is enabled by default
-          .then( ( todosText ) => {
+      //     return
+      //   }
+      //   this.todos.unshift({
 
-            var todos = JSON.parse( todosText || '[]' )
-            todos.forEach( function ( todo, index ) {
+      //     id        : this.uidCount++,
+      //     text      : this.todo.trim(),
+      //     completed : false
+      //   });
+      //   this.todo = '';
+      // },
+      // fetchData () {
 
-              todo.id = index;
-            });
-            this.uidCount = todos.length;
-            this.todos = todos;
-          });
-      },
+      //   this.userSession.getFile( STORAGE_FILE ) // decryption is enabled by default
+      //     .then( ( todosText ) => {
 
-      signOut () {
+      //       var todos = JSON.parse( todosText || '[]' )
+      //       todos.forEach( function ( todo, index ) {
 
-        userSession.signUserOut( window.location.href );
-      }
+      //         todo.id = index;
+      //       });
+      //       this.uidCount = todos.length;
+      //       this.todos = todos;
+      //     });
+      // }
     }
   }
 </script>
