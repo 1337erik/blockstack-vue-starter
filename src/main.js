@@ -18,6 +18,9 @@ import vuetify from './plugins/vuetify';
 // BlockStack
 window.blockstack = require( 'blockstack' );
 
+// Axios
+window.axios = require( 'axios' );
+
 Vue.config.productionTip = false;
 
 new Vue({

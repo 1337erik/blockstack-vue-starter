@@ -18,7 +18,9 @@
 
 <script>
 
-  import { UserSession, AppConfig } from 'blockstack';
+  import { userSession } from './blockstack/userSession';
+  import { Person } from 'blockstack';
+
   import MainAppbar from './components/MainAppbar';
   import MainNavDrawer from './components/MainNavDrawer';
 
@@ -29,57 +31,47 @@
     name: 'App',
     data: () => ({
 
+      userSession : null
     }),
     computed: {
 
       ...mapGetters({
 
-        isAuth : 'auth/isAuth',
-        userSession : 'auth/userSession'
+        isAuth      : 'auth/isAuth',
+        // userSession : 'auth/userSession'
       })
     },
     methods: {
 
       ...mapActions({
 
-        saveUserSession : 'auth/saveUserSession',
+        // saveUserSession : 'auth/saveUserSession',
         authenticate    : 'auth/authenticate',
       })
     },
-    async created(){
+    created(){
 
-      const appConfig   = new AppConfig([ 'store_write', 'publish_data' ]);
-      const userSession = new UserSession({ appConfig });
-      this.saveUserSession( userSession );
+      this.userSession = userSession;
+    },
+    mounted(){
 
-      console.log( '! is signed in: ', !userSession.isUserSignedIn() );
+      console.log( 'is signed in: ', userSession.isUserSignedIn() );
       console.log( 'is pending signin: ', userSession.isSignInPending() );
-      // console.log( userSession.loadUserData() );
 
-      // userSession.signUserOut( window.location.href );
+      if( userSession.isUserSignedIn() ){
 
-      if( !userSession.isUserSignedIn() && userSession.isSignInPending() ){
+        const userData = userSession.loadUserData();
+        console.log( 'got data: ', userData );
 
-        const userData = await userSession.handlePendingSignIn();
-        console.log( '..got here', userData );
+        const user = new Person( this.userData.profile );
+        console.log( 'got a user: ', user );
+      } else if ( userSession.isSignInPending() ){
 
-        if( !userData.username ){
+        userSession.handlePendingSignIn()
+          .then( ( userData ) => {
 
-          throw new Error( 'This app requires a name! FASCISM' );
-        }
-
-        window.location = window.location.origin;
-
-        // userData = userSession.loadUserData()
-        // user     = new Person( this.userData.profile );
-
-        // const data = {
-
-        //   userData,
-        //   user
-        // };
-
-        // this.authenticate( data );
+          window.location = window.location.origin;
+        })
       }
     },
     components: {

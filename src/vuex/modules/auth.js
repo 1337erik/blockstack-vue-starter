@@ -1,8 +1,9 @@
+import { userSession } from '../../blockstack/userSession';
+
 const state = {
 
-    userSession   : null, //JSON.parse( localStorage.getItem( 'userSession' ) ) || null,
-    user          : null, //JSON.parse( localStorage.getItem( 'user' ) ) || null,
-    userData      : null, //JSON.parse( localStorage.getItem( 'userData' ) ) || null,
+    user     : null, //JSON.parse( localStorage.getItem( 'user' ) ) || null,
+    userData : null, //JSON.parse( localStorage.getItem( 'userData' ) ) || null,
     // authenticated : false,
 };
 const mutations = {
@@ -27,13 +28,13 @@ const mutations = {
 };
 const actions = {
 
-    signIn( context ){
+    signIn(){
 
-        context.state.userSession.redirectToSignIn();
+        userSession.redirectToSignIn();
     },
-    signOut( context ){
+    signOut(){
 
-        context.state.userSession.signUserOut( window.location.origin );
+        userSession.signUserOut( window.location.origin );
     },
     saveUserSession( context, userSession ){
 
@@ -49,8 +50,8 @@ const actions = {
 };
 const getters = {
 
-    userSession : state => state.userSession,
-    isAuth      : state => state.userSession ? state.userSession.isUserSignedIn() : false,
+    // userSession : state => userSession,
+    isAuth      : state => userSession ? userSession.isUserSignedIn() : false,
     userData    : state => state.userData,
     user        : state => state.user,
 };
